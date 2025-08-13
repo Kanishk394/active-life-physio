@@ -38,12 +38,24 @@ git push -u origin main
 6. Click "Deploy site"
 7. Your site will be live at: `https://random-name.netlify.app`
 
-### Option 2: Vercel
+### Option 2: Vercel (Recommended for React/Next.js)
 1. Go to [vercel.com](https://vercel.com)
-2. Click "New Project"
-3. Import your GitHub repository
-4. Deploy with default settings
-5. Your site will be live at: `https://active-life-physio.vercel.app`
+2. Sign up/Login with GitHub
+3. Click "New Project"
+4. Import your `active-life-physio` repository
+5. Deploy settings:
+   - Framework Preset: Other
+   - Build Command: (leave empty)
+   - Output Directory: (leave empty)
+   - Install Command: (leave empty)
+6. Click "Deploy"
+7. Your site will be live at: `https://active-life-physio.vercel.app`
+
+#### Vercel Configuration
+- `vercel.json` file included for optimal deployment
+- Automatic HTTPS and CDN
+- Custom domain support
+- Environment variables support
 
 ### Option 3: GitHub Pages
 1. Go to your repository on GitHub

@@ -28,3 +28,11 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# Vercel
+.vercel
+.vercel/
+
+# Build outputs
+dist/
+build/
