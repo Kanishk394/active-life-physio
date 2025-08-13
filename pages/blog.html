@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Active Life Physiotherapy Clinic</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .blog-card {
+            transition: transform 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-image-container {
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+        }
+        .blog-image {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .blog-meta {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        .blog-categories .badge {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <img src="../images/logo.png" alt="Active Life Physiotherapy Clinic" height="70" class="d-inline-block">
+                <span class="clinic-name ms-2">Active Life Physiotherapy Clinic</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="appointment.html">Book Appointment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="testimonials.html">Testimonials</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pay-btn" href="payment.html"><i class="fas fa-credit-card me-1"></i> Pay Online</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="bg-primary text-white py-5">
+        <div class="container text-center">
+            <h1>Health & Wellness Blog</h1>
+            <p class="lead">Expert tips, advice, and insights from our physiotherapy team</p>
+        </div>
+    </header>
+
+    <!-- Blog Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Main Content -->
+                <div class="col-lg-8">
+                    <!-- Featured Post -->
+                    <div class="card mb-5 border-0 shadow-sm">
+                        <img src="../images/featured.jpg" class="card-img-top" alt="Lower Back Pain Exercises">
+                        <div class="card-body">
+                            <div class="blog-meta mb-2">
+                                <span><i class="far fa-calendar-alt me-1"></i> June 15, 2023</span>
+                                <span class="ms-3"><i class="far fa-user me-1"></i> Dr. Maniska Yadav</span>
+                            </div>
+                            <h2 class="card-title">5 Effective Exercises to Relieve Lower Back Pain</h2>
+                            <div class="blog-categories mb-3">
+                                <span class="badge bg-primary">Back Pain</span>
+                                <span class="badge bg-secondary">Exercise Therapy</span>
+                            </div>
+                            <p class="card-text">Lower back pain is one of the most common complaints we hear at our clinic. Whether it's from sitting too long at a desk, poor posture, or an injury, back pain can significantly impact your quality of life. The good news is that specific exercises can help alleviate this pain and strengthen your back muscles to prevent future issues.</p>
+                            <p class="card-text">In this comprehensive guide, we'll explore five effective exercises that you can do at home to help relieve lower back pain. These exercises focus on strengthening your core muscles, improving flexibility, and promoting proper alignment.</p>
+                            <a href="blog-post.html" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Posts -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card blog-card border-0 shadow-sm">
+                                <div class="blog-image-container">
+                                    <img src="../images/blog/blog1.png" class="card-img-top blog-image" alt="Office Workers Stretching">
+                                </div>
+                                <div class="card-body">
+                                    <div class="blog-meta mb-2">
+                                        <span><i class="far fa-calendar-alt me-1"></i> June 10, 2023</span>
+                                    </div>
+                                    <h5 class="card-title">The Benefits of Regular Stretching for Office Workers</h5>
+                                    <div class="blog-categories mb-3">
+                                        <span class="badge bg-primary">Workplace Health</span>
+                                    </div>
+                                    <p class="card-text">Discover how incorporating simple stretching routines into your workday can prevent pain and improve productivity.</p>
+                                    <a href="https://ohse.ca/the-importance-of-workplace-stretching-enhancing-health-safety-and-productivity/" target="_blank" class="btn btn-sm btn-outline-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card blog-card border-0 shadow-sm">
+                                <div class="blog-image-container">
+                                    <img src="../images/blog/blog2.png" class="card-img-top blog-image" alt="Sports Injury Prevention">
+                                </div>
+                                <div class="card-body">
+                                    <div class="blog-meta mb-2">
+                                        <span><i class="far fa-calendar-alt me-1"></i> June 5, 2023</span>
+                                    </div>
+                                    <h5 class="card-title">How to Prevent Sports Injuries: A Comprehensive Guide</h5>
+                                    <div class="blog-categories mb-3">
+                                        <span class="badge bg-primary">Sports</span>
+                                        <span class="badge bg-secondary">Injury Prevention</span>
+                                    </div>
+                                    <p class="card-text">Learn essential techniques and practices to minimize the risk of injuries during sports and physical activities.</p>
+                                    <a href="https://www.bone-joint.com/a-comprehensive-guide-to-sports-injury-prevention/" target="_blank" class="btn btn-sm btn-outline-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card blog-card border-0 shadow-sm">
+                                <div class="blog-image-container">
+                                    <img src="../images/blog/blog3.png" class="card-img-top blog-image" alt="Sciatica Treatment">
+                                </div>
+                                <div class="card-body">
+                                    <div class="blog-meta mb-2">
+                                        <span><i class="far fa-calendar-alt me-1"></i> May 28, 2023</span>
+                                    </div>
+                                    <h5 class="card-title">Understanding Sciatica: Causes, Symptoms, and Treatment</h5>
+                                    <div class="blog-categories mb-3">
+                                        <span class="badge bg-primary">Sciatica</span>
+                                        <span class="badge bg-secondary">Pain Management</span>
+                                    </div>
+                                    <p class="card-text">A detailed look at sciatica, its common causes, how to recognize symptoms, and effective treatment options.</p>
+                                    <a href="https://vakrangee.biogetica.com/is-there-a-sciatica-natural-treatment-which-cures-sciatica/?msclkid=e9ee57ec913f15dd7beb3f93d557b371&utm_source=bing&utm_medium=cpc&utm_campaign=AKM%20-%20DSA%20-%20Global&utm_term=is-there&utm_content=All%20Webpages" target="_blank" class="btn btn-sm btn-outline-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card blog-card border-0 shadow-sm">
+                                <div class="blog-image-container">
+                                    <img src="../images/blog/blog4.png" class="card-img-top blog-image" alt="Post-Surgery Rehabilitation">
+                                </div>
+                                <div class="card-body">
+                                    <div class="blog-meta mb-2">
+                                        <span><i class="far fa-calendar-alt me-1"></i> May 20, 2023</span>
+                                    </div>
+                                    <h5 class="card-title">Post-Surgery Rehabilitation: What to Expect and How to Prepare</h5>
+                                    <div class="blog-categories mb-3">
+                                        <span class="badge bg-primary">Rehabilitation</span>
+                                        <span class="badge bg-secondary">Recovery</span>
+                                    </div>
+                                    <p class="card-text">A guide to help patients understand the rehabilitation process after surgery and how to maximize recovery.</p>
+                                    <a href="https://www.dramitroy.com/post-surgery-rehabilitation-what-to-expect-and-how-to-prepare/" target="_blank" class="btn btn-sm btn-outline-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <nav class="mt-5">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <!-- Search -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Search</h5>
+                            <form>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search for...">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- Categories -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Categories</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Back Pain
+                                    <span class="badge bg-primary rounded-pill">8</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Sports Injuries
+                                    <span class="badge bg-primary rounded-pill">6</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Exercise Tips
+                                    <span class="badge bg-primary rounded-pill">12</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Rehabilitation
+                                    <span class="badge bg-primary rounded-pill">5</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Workplace Health
+                                    <span class="badge bg-primary rounded-pill">4</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Recent Posts -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Recent Posts</h5>
+                            <div class="list-group list-group-flush">
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-1">5 Effective Exercises to Relieve Lower Back Pain</h6>
+                                        <small>3 days ago</small>
+                                    </div>
+                                </a>
+                                <a href="https://ohse.ca/the-importance-of-workplace-stretching-enhancing-health-safety-and-productivity/" target="_blank" class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-1">The Benefits of Regular Stretching for Office Workers</h6>
+                                        <small>1 week ago</small>
+                                    </div>
+                                </a>
+                                <a href="https://www.bone-joint.com/a-comprehensive-guide-to-sports-injury-prevention/" target="_blank" class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-1">How to Prevent Sports Injuries: A Comprehensive Guide</h6>
+                                        <small>2 weeks ago</small>
+                                    </div>
+                                </a>
+                                <a href="https://vakrangee.biogetica.com/is-there-a-sciatica-natural-treatment-which-cures-sciatica/?msclkid=e9ee57ec913f15dd7beb3f93d557b371&utm_source=bing&utm_medium=cpc&utm_campaign=AKM%20-%20DSA%20-%20Global&utm_term=is-there&utm_content=All%20Webpages" target="_blank" class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-1">Understanding Sciatica: Causes, Symptoms, and Treatment</h6>
+                                        <small>3 weeks ago</small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Newsletter -->
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Subscribe to Our Newsletter</h5>
+                            <p class="card-text">Get the latest health tips and clinic updates delivered to your inbox.</p>
+                            <form id="newsletterForm">
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" placeholder="Your Email Address" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-button">
+        <a href="https://wa.me/919811366344" target="_blank" class="btn btn-success rounded-circle">
+            <i class="fab fa-whatsapp fa-2x"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Active Life Physiotherapy Clinic</h5>
+                    <p>Restoring Movement, Rebuilding Lives</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-white">Home</a></li>
+                        <li><a href="about.html" class="text-white">About Us</a></li>
+                        <li><a href="services.html" class="text-white">Services</a></li>
+                        <li><a href="appointment.html" class="text-white">Book Appointment</a></li>
+                        <li><a href="contact.html" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> Kunal Residency, Sector 12, Rahul Vihar 2nd, Pratap Vihar, Ghaziabad, Mahiuddin Pur Kanawni, Uttar Pradesh 201009</p>
+                        <p><i class="fas fa-phone me-2"></i> +91 9811366344</p>
+                        <p><i class="fas fa-envelope me-2"></i> activelifephysiotherapyc@gmail.com</p>
+                        <p><i class="fas fa-clock me-2"></i> Mon-Sat: 9:00 AM - 7:00 PM</p>
+                    </address>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2023 Active Life Physiotherapy Clinic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        // Newsletter form submission
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing to our newsletter!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

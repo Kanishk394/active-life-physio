@@ -1,0 +1,278 @@
+/* Global Styles */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --success-color: #198754;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(13, 110, 253, 0.1);
+    z-index: 0;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(13, 110, 253, 0.05);
+    z-index: 0;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Navigation Buttons */
+.navbar-nav {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    justify-content: space-between;
+}
+
+.navbar-nav .nav-link {
+    transition: all 0.3s ease;
+    color: #0d6efd !important;
+    padding: 8px 12px !important;
+    margin: 0 2px;
+    font-size: 0.95rem;
+}
+
+.navbar-nav .nav-link.active {
+    background-color: rgba(13, 110, 253, 0.1);
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+.navbar-nav .nav-link:active {
+    background-color: rgba(13, 110, 253, 0.2);
+    transform: translateY(1px);
+}
+
+/* Override for Pay Online button */
+.navbar-nav .pay-btn,
+.navbar-nav .pay-btn:hover,
+.navbar-nav .pay-btn:focus,
+.navbar-nav .pay-btn:active,
+.navbar-nav .pay-btn *,
+.navbar-nav .pay-btn *:hover,
+.navbar-nav .pay-btn *:focus,
+.navbar-nav .pay-btn *:active {
+    color: white !important;
+}
+
+.navbar-nav .nav-link:hover {
+    transform: translateY(-3px);
+}
+
+/* Pay Online Button */
+.pay-btn {
+    background: linear-gradient(45deg, #0d6efd, #0dcaf0);
+    color: white !important;
+    border-radius: 25px;
+    padding: 8px 15px !important;
+    margin-left: 2px;
+    transition: all 0.3s ease;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3);
+    border: 2px solid #0d6efd;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.pay-btn * {
+    color: white !important;
+}
+
+.pay-btn:hover {
+    background: linear-gradient(45deg, #0dcaf0, #0d6efd);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(13, 110, 253, 0.4);
+}
+
+/* Card hover effects */
+.card {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.service-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(13, 110, 253, 0.1);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.card:hover .service-icon {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-button .btn {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer a {
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--primary-color) !important;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 36px;
+    margin-right: 5px;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    background: var(--primary-color);
+}
+
+/* Clinic Name Styling */
+.clinic-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0d6efd;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #0d6efd, #0dcaf0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0px 0px 1px rgba(13, 110, 253, 0.1);
+}
+
+@media (max-width: 768px) {
+    .clinic-name {
+        font-size: 1.1rem;
+    }
+}
+
+/* Text gradient */
+.text-gradient {
+    background: linear-gradient(90deg, var(--primary-color), #4361ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Animation classes */
+.animate-on-scroll {
+    opacity: 1;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section titles */
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 3rem 0;
+    }
+    
+    .navbar-nav .nav-link {
+        text-align: left;
+        padding: 10px 15px !important;
+        margin: 2px 0;
+    }
+    
+    .pay-btn {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}

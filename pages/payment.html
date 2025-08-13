@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Payment - Active Life Physiotherapy Clinic</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .payment-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .payment-option {
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+        .payment-option:hover {
+            border-color: #0d6efd;
+            box-shadow: 0 8px 30px rgba(13, 110, 253, 0.2);
+            transform: translateY(-3px);
+        }
+        .payment-option.selected {
+            border-color: #0d6efd;
+            background: linear-gradient(145deg, rgba(13, 110, 253, 0.05), rgba(13, 110, 253, 0.1));
+            box-shadow: 0 8px 30px rgba(13, 110, 253, 0.25);
+            transform: translateY(-3px);
+        }
+        .payment-logo {
+            height: 60px;
+            margin-right: 10px;
+        }
+        .form-control, .form-select {
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 12px;
+            padding: 15px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+        .card {
+            border-radius: 20px;
+            border: none;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        .payment-icon {
+            font-size: 3rem;
+            margin-right: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .amount-display {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .security-badge {
+            display: inline-flex;
+            align-items: center;
+            background: #28a745;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            margin: 10px 5px;
+        }
+        .accordion-button {
+            border-radius: 10px !important;
+            background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+        }
+        .accordion-button:not(.collapsed) {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <img src="../images/logo.png" alt="Active Life Physiotherapy Clinic" height="70" class="d-inline-block">
+                <span class="clinic-name ms-2">Active Life Physiotherapy Clinic</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="appointment.html">Book Appointment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="testimonials.html">Testimonials</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pay-btn active" href="payment.html"><i class="fas fa-credit-card me-1"></i> Pay Online</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="payment-hero py-5">
+        <div class="container text-center">
+            <div class="fade-in-up">
+                <i class="fas fa-shield-alt fa-4x mb-3" style="opacity: 0.8;"></i>
+                <h1 class="display-4 fw-bold mb-3">Secure Online Payment</h1>
+                <p class="lead mb-4">Safe, fast, and convenient payment options for your physiotherapy sessions</p>
+                <div class="d-flex justify-content-center flex-wrap">
+                    <span class="security-badge"><i class="fas fa-lock me-2"></i>SSL Encrypted</span>
+                    <span class="security-badge"><i class="fas fa-shield-alt me-2"></i>Bank Grade Security</span>
+                    <span class="security-badge"><i class="fas fa-check-circle me-2"></i>Instant Confirmation</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Payment Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-5">
+                            <div class="text-center mb-4">
+                                <i class="fas fa-credit-card payment-icon"></i>
+                                <h2 class="card-title">Make a Payment</h2>
+                                <p class="text-muted">Fill in your details to proceed with secure payment</p>
+                            </div>
+                            
+                            <form id="paymentForm">
+                                <div id="formResponse" class="alert" style="display: none;"></div>
+                                
+                                <!-- Patient Information -->
+                                <h5 class="mb-3">Patient Information</h5>
+                                <div class="row mb-4">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="name" class="form-label">Full Name*</label>
+                                        <input type="text" class="form-control" id="name" name="name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="phone" class="form-label">Phone Number*</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">Email Address*</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="appointmentId" class="form-label">Appointment ID (if any)</label>
+                                        <input type="text" class="form-control" id="appointmentId" name="appointmentId">
+                                    </div>
+                                </div>
+                                
+                                <!-- Payment Details -->
+                                <h5 class="mb-3">Payment Details</h5>
+                                <div class="mb-3">
+                                    <label for="service" class="form-label">Service*</label>
+                                    <select class="form-select" id="service" name="service" required>
+                                        <option value="" selected disabled>Select a service</option>
+                                        <option value="Consultation" data-price="500">Consultation (₹500)</option>
+                                        <option value="Orthopedic Rehabilitation" data-price="800">Orthopedic Rehabilitation (₹800)</option>
+                                        <option value="Sports Injury Treatment" data-price="1000">Sports Injury Treatment (₹1000)</option>
+                                        <option value="Neurological Rehabilitation" data-price="1200">Neurological Rehabilitation (₹1200)</option>
+                                        <option value="Pain Management" data-price="700">Pain Management (₹700)</option>
+                                        <option value="Post-Surgery Rehabilitation" data-price="1500">Post-Surgery Rehabilitation (₹1500)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="sessions" class="form-label">Number of Sessions*</label>
+                                    <select class="form-select" id="sessions" name="sessions" required>
+                                        <option value="1">1 Session</option>
+                                        <option value="5">5 Sessions (5% discount)</option>
+                                        <option value="10">10 Sessions (10% discount)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="amount-display" id="amountDisplay" style="display: none;">
+                                    <h4 class="mb-2"><i class="fas fa-rupee-sign me-2"></i>Total Amount</h4>
+                                    <h2 class="mb-0" id="displayAmount">₹0</h2>
+                                    <small>Including all applicable charges</small>
+                                </div>
+                                <input type="hidden" id="amount" name="amount">
+                                
+                                <!-- Payment Method -->
+                                <h5 class="mb-3">Payment Method</h5>
+                                <div class="mb-4">
+                                    <!-- UPI Payment -->
+                                    <div class="payment-option d-flex align-items-center fade-in-up" onclick="selectPayment('upi')">
+                                        <input type="radio" name="paymentMethod" id="upi" value="upi" class="me-3" required>
+                                        <img src="../images/UPI-Logo.png" alt="UPI" class="payment-logo">
+                                        <div>
+                                            <label for="upi" class="form-label mb-0 fw-bold fs-5">UPI Payment</label>
+                                            <small class="d-block text-muted">Google Pay, PhonePe, Paytm, BHIM</small>
+                                            <span class="badge bg-success mt-1">Most Popular</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Credit/Debit Cards -->
+                                    <div class="payment-option d-flex align-items-center fade-in-up" onclick="selectPayment('cards')">
+                                        <input type="radio" name="paymentMethod" id="cards" value="cards" class="me-3">
+                                        <img src="../images/png-clipart-mastercard-visa-bank-card-payment-mastercard-text-service.png" alt="Credit/Debit Cards" class="payment-logo">
+                                        <div>
+                                            <label for="cards" class="form-label mb-0 fw-bold fs-5">Credit/Debit Cards</label>
+                                            <small class="d-block text-muted">Visa, Mastercard, RuPay, American Express</small>
+                                            <span class="badge bg-primary mt-1">Secure</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Net Banking -->
+                                    <div class="payment-option d-flex align-items-center fade-in-up" onclick="selectPayment('netbanking')">
+                                        <input type="radio" name="paymentMethod" id="netbanking" value="netbanking" class="me-3">
+                                        <i class="fas fa-university payment-icon"></i>
+                                        <div>
+                                            <label for="netbanking" class="form-label mb-0 fw-bold fs-5">Net Banking</label>
+                                            <small class="d-block text-muted">All major banks supported</small>
+                                            <span class="badge bg-info mt-1">Trusted</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Digital Wallets -->
+                                    <div class="payment-option d-flex align-items-center fade-in-up" onclick="selectPayment('wallets')">
+                                        <input type="radio" name="paymentMethod" id="wallets" value="wallets" class="me-3">
+                                        <img src="../images/png-transparent-black-wallet-logo-money-wallet-computer-icons-payment-finance-wallet-icons-no-attribution-text-service-logo.png" alt="Digital Wallets" class="payment-logo">
+                                        <div>
+                                            <label for="wallets" class="form-label mb-0 fw-bold fs-5">Digital Wallets</label>
+                                            <small class="d-block text-muted">Paytm, Mobikwik, Freecharge, Amazon Pay</small>
+                                            <span class="badge bg-warning mt-1">Quick</span>
+                                        </div>
+                                    </div>
+                                    
+
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                    <i class="fas fa-credit-card me-2"></i>Proceed to Payment
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Information -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="text-center mb-4">Payment Information</h2>
+                    
+                    <div class="accordion" id="paymentInfo">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Secure Payments
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#paymentInfo">
+                                <div class="accordion-body">
+                                    <p>All payments are processed through secure payment gateways. We use industry-standard encryption to protect your personal and financial information. We do not store your credit card details on our servers.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Payment Methods
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#paymentInfo">
+                                <div class="accordion-body">
+                                    <p>We accept multiple payment methods for your convenience:</p>
+                                    <ul>
+                                        <li><strong>UPI:</strong> Google Pay, PhonePe, Paytm, BHIM, and other UPI apps</li>
+                                        <li><strong>Cards:</strong> Visa, Mastercard, RuPay, American Express credit and debit cards</li>
+                                        <li><strong>Net Banking:</strong> All major Indian banks including SBI, HDFC, ICICI, Axis, and more</li>
+                                        <li><strong>Digital Wallets:</strong> Paytm, Mobikwik, Freecharge, Amazon Pay</li>
+                                        <li><strong>Secure Gateways:</strong> Razorpay for safe and encrypted transactions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-button">
+        <a href="https://wa.me/919811366344" target="_blank" class="btn btn-success rounded-circle">
+            <i class="fab fa-whatsapp fa-2x"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Active Life Physiotherapy Clinic</h5>
+                    <p>Restoring Movement, Rebuilding Lives</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-white">Home</a></li>
+                        <li><a href="about.html" class="text-white">About Us</a></li>
+                        <li><a href="services.html" class="text-white">Services</a></li>
+                        <li><a href="appointment.html" class="text-white">Book Appointment</a></li>
+                        <li><a href="contact.html" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> Kunal Residency, Sector 12, Rahul Vihar 2nd, Pratap Vihar, Ghaziabad, Mahiuddin Pur Kanawni, Uttar Pradesh 201009</p>
+                        <p><i class="fas fa-phone me-2"></i> +91 9811366344</p>
+                        <p><i class="fas fa-envelope me-2"></i> activelifephysiotherapyc@gmail.com</p>
+                        <p><i class="fas fa-clock me-2"></i> Mon-Sat: 9:00 AM - 7:00 PM</p>
+                    </address>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2023 Active Life Physiotherapy Clinic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        // Calculate amount based on service and sessions
+        document.getElementById('service').addEventListener('change', calculateAmount);
+        document.getElementById('sessions').addEventListener('change', calculateAmount);
+        
+        function calculateAmount() {
+            const serviceSelect = document.getElementById('service');
+            const sessionsSelect = document.getElementById('sessions');
+            const amountInput = document.getElementById('amount');
+            const amountDisplay = document.getElementById('amountDisplay');
+            const displayAmount = document.getElementById('displayAmount');
+            
+            if (serviceSelect.selectedIndex > 0) {
+                const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
+                const basePrice = parseInt(selectedOption.getAttribute('data-price'));
+                const sessions = parseInt(sessionsSelect.value);
+                
+                let discount = 0;
+                if (sessions === 5) {
+                    discount = 0.05; // 5% discount
+                } else if (sessions === 10) {
+                    discount = 0.10; // 10% discount
+                }
+                
+                const totalAmount = basePrice * sessions * (1 - discount);
+                amountInput.value = totalAmount.toFixed(2);
+                displayAmount.textContent = '₹' + totalAmount.toFixed(0);
+                amountDisplay.style.display = 'block';
+                amountDisplay.classList.add('fade-in-up');
+            } else {
+                amountInput.value = '';
+                amountDisplay.style.display = 'none';
+            }
+        }
+        
+        // Select payment method
+        function selectPayment(method) {
+            document.querySelectorAll('.payment-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            document.getElementById(method).checked = true;
+            document.getElementById(method).closest('.payment-option').classList.add('selected');
+        }
+        
+        // Form submission
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processing...';
+            submitBtn.disabled = true;
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const service = document.getElementById('service').options[document.getElementById('service').selectedIndex].text;
+            const amount = document.getElementById('amount').value;
+            
+            setTimeout(() => {
+                // Display success message
+                const responseDiv = document.getElementById('formResponse');
+                responseDiv.className = 'alert alert-success fade-in-up';
+                responseDiv.innerHTML = `
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-check-circle me-3 text-success" style="font-size: 1.5rem;"></i>
+                        <div>
+                            <strong>Payment Initiated Successfully!</strong><br>
+                            Thank you, ${name}! Your payment request for ${service} (₹${amount}) has been processed.<br>
+                            <small class="text-muted">Redirecting to secure payment gateway...</small>
+                        </div>
+                    </div>
+                `;
+                responseDiv.style.display = 'block';
+                responseDiv.scrollIntoView({ behavior: 'smooth' });
+                
+                // Reset button
+                submitBtn.innerHTML = '<i class="fas fa-credit-card me-2"></i>Proceed to Payment';
+                submitBtn.disabled = false;
+                
+                // Simulate payment gateway redirect
+                setTimeout(() => {
+                    alert('🎉 Demo Mode: In production, you would be redirected to the secure payment gateway.');
+                }, 2000);
+            }, 1500);
+        });
+        
+        // Add entrance animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.fade-in-up');
+            elements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
+</html>

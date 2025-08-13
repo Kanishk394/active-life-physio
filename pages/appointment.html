@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Active Life Physiotherapy Clinic</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <img src="../images/logo.png" alt="Active Life Physiotherapy Clinic" height="70" class="d-inline-block">
+                <span class="clinic-name ms-2">Active Life Physiotherapy Clinic</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="appointment.html">Book Appointment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="testimonials.html">Testimonials</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pay-btn" href="payment.html"><i class="fas fa-credit-card me-1"></i> Pay Online</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="bg-primary text-white py-5">
+        <div class="container text-center">
+            <h1>Book Your Appointment</h1>
+            <p class="lead">Schedule a consultation with our expert physiotherapists</p>
+        </div>
+    </header>
+
+    <!-- Appointment Form Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2>Schedule Your Visit</h2>
+                    <p>Please fill out the form below to request an appointment. Our team will contact you to confirm your booking.</p>
+                    
+                    <form id="appointmentForm">
+                        <div id="formResponse" class="alert" style="display: none;"></div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name*</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number*</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="service" class="form-label">Service Required*</label>
+                            <select class="form-select" id="service" name="service" required>
+                                <option value="" selected disabled>Select a service</option>
+                                <option value="Orthopedic Rehabilitation">Orthopedic Rehabilitation</option>
+                                <option value="Sports Injury Treatment">Sports Injury Treatment</option>
+                                <option value="Neurological Rehabilitation">Neurological Rehabilitation</option>
+                                <option value="Pain Management">Pain Management</option>
+                                <option value="Post-Surgery Rehabilitation">Post-Surgery Rehabilitation</option>
+                                <option value="General Consultation">General Consultation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="date" class="form-label">Preferred Date*</label>
+                                <input type="date" class="form-control" id="date" name="date" required>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="time" class="form-label">Preferred Time*</label>
+                                <select class="form-select" id="time" name="time" required>
+                                    <option value="" selected disabled>Select time</option>
+                                    <option value="9:00 AM">9:00 AM</option>
+                                    <option value="10:00 AM">10:00 AM</option>
+                                    <option value="11:00 AM">11:00 AM</option>
+                                    <option value="12:00 PM">12:00 PM</option>
+                                    <option value="2:00 PM">2:00 PM</option>
+                                    <option value="3:00 PM">3:00 PM</option>
+                                    <option value="4:00 PM">4:00 PM</option>
+                                    <option value="5:00 PM">5:00 PM</option>
+                                    <option value="6:00 PM">6:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Additional Information</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Please describe your condition or any specific concerns"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Submit Appointment Request</button>
+                    </form>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <h3>Contact Us Directly</h3>
+                            <p>Prefer to speak with someone? Contact us directly:</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> +91 9811366344</li>
+                                <li class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> activelifephysiotherapyc@gmail.com</li>
+                                <li><i class="fab fa-whatsapp me-2 text-primary"></i> WhatsApp: +91 9811366344</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3>Clinic Hours</h3>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Monday - Friday</td>
+                                        <td>9:00 AM - 7:00 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Saturday</td>
+                                        <td>9:00 AM - 5:00 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sunday</td>
+                                        <td>Closed</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="mb-0"><small class="text-muted">* Emergency appointments available on request</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-button">
+        <a href="https://wa.me/919811366344" target="_blank" class="btn btn-success rounded-circle">
+            <i class="fab fa-whatsapp fa-2x"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Active Life Physiotherapy Clinic</h5>
+                    <p>Restoring Movement, Rebuilding Lives</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-white">Home</a></li>
+                        <li><a href="about.html" class="text-white">About Us</a></li>
+                        <li><a href="services.html" class="text-white">Services</a></li>
+                        <li><a href="appointment.html" class="text-white">Book Appointment</a></li>
+                        <li><a href="contact.html" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> Kunal Residency, Sector 12, Rahul Vihar 2nd, Pratap Vihar, Ghaziabad, Mahiuddin Pur Kanawni, Uttar Pradesh 201009</p>
+                        <p><i class="fas fa-phone me-2"></i> +91 9811366344</p>
+                        <p><i class="fas fa-envelope me-2"></i> activelifephysiotherapyc@gmail.com</p>
+                        <p><i class="fas fa-clock me-2"></i> Mon-Sat: 9:00 AM - 7:00 PM</p>
+                    </address>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2023 Active Life Physiotherapy Clinic. All Rights Reserved.</p>
+                <p><small class="text-muted">Designed by Kanishk Yadav</small></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/supabase-config.js"></script>
+    <script>
+        document.getElementById('appointmentForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const responseDiv = document.getElementById('formResponse');
+            const submitBtn = this.querySelector('button[type="submit"]');
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const phone = formData.get('phone');
+            
+            try {
+                // Submit to Supabase
+                const result = await submitAppointment(formData);
+                
+                if (result.success) {
+                    // Show success message
+                    responseDiv.className = 'alert alert-success';
+                    responseDiv.innerHTML = `
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2 text-success"></i>
+                            <div>
+                                <strong>Request Submitted Successfully!</strong><br>
+                                Thank you, ${name}! Your appointment request has been saved.<br>
+                                <small>You will receive a WhatsApp confirmation shortly at ${phone}.</small>
+                            </div>
+                        </div>
+                    `;
+                    responseDiv.style.display = 'block';
+                    responseDiv.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Reset form
+                    this.reset();
+                } else {
+                    throw new Error(result.error);
+                }
+            } catch (error) {
+                // Show error message
+                responseDiv.className = 'alert alert-danger';
+                responseDiv.innerHTML = `
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-exclamation-circle me-2 text-danger"></i>
+                        <div>
+                            <strong>Submission Failed!</strong><br>
+                            ${error.message}<br>
+                            <small>Please try again or contact us directly.</small>
+                        </div>
+                    </div>
+                `;
+                responseDiv.style.display = 'block';
+                responseDiv.scrollIntoView({ behavior: 'smooth' });
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Appointment Request';
+            }
+        });
+    </script>
+</body>
+</html>
