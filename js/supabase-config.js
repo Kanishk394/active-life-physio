@@ -65,10 +65,11 @@ async function submitTestimonial(name, email, message, rating) {
         const { data, error } = await supabase
             .from('testimonials')
             .insert([{
-                name,
-                email,
-                message,
-                rating
+                name: name,
+                email: email,
+                message: message,
+                rating: rating,
+                status: 'pending'
             }])
             .select()
 
